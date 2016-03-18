@@ -1,0 +1,27 @@
+<div class="vj-calendar">
+    <table class="vj-calendar__table">
+        <thead>
+            <tr>
+                <td ng-click="$ctrl.goTo('year', 'prev')"><span>&laquo;</span></td>
+                <td ng-click="$ctrl.goTo('month', 'prev')"><span>&lsaquo;</span></td>
+                <td colspan="3">{{$ctrl.service.getCurrentDate() | date:"MMMM yyyy"}}</td>
+                <td ng-click="$ctrl.goTo('month', 'next')"><span>&rsaquo;</span></td>
+                <td ng-click="$ctrl.goTo('year', 'next')"><span>&raquo;</span></td>
+            </tr>
+            <tr>
+                <td ng-repeat="name in $ctrl.service.getNames() track by $index">
+                    {{name}}
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in $ctrl.matrix track by $index">
+                <td ng-click="$ctrl.selectDate(cell.day)" ng-repeat="cell in row" ng-class="{today: cell.today, selected: cell.selected}">
+                    <span>
+                        {{cell.day === -1 ? "&nbsp;" : cell.day}}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

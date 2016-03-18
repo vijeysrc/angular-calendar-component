@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Demo Angular Calendar Component</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./calendar.style.css" />
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/calendar-service/calendar.service.js"></script>
+    <script src="../dist/calendar.component.min.js"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="MainCtrl as vm">
+        <p>
+            <label for="">From Date: </label>
+            {{vm.from | date:"dd MMM yyyy"}}
+        </p>
+        <vj-calendar ng-model="vm.from"></vj-calendar>
+
+        <p>
+            <label for="">To Date: </label>
+            {{vm.to | date:"dd MMM yyyy"}}
+        </p>
+        <vj-calendar ng-model="vm.to"></vj-calendar>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

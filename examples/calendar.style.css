@@ -1,0 +1,26 @@
+.vj-calendar__table {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    width: 210px;
+    font-size: 10px;
+}
+
+.vj-calendar__table td {
+    border: 1px solid #333;
+    width: 10%;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+
+.vj-calendar__table td {
+    text-align: center;
+}
+
+.vj-calendar__table td.today {
+    background-color: blue;
+}
+
+.vj-calendar__table td.selected {
+    border: 2px solid maroon;
+}
